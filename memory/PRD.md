@@ -25,6 +25,8 @@ Convertir el menú físico del restaurante Los Andariegos (Buffet Mar y Tierra) 
 ## Implementado (2026-09-10)
 - Actualización del apartado de bebidas según nueva imagen oficial: CERVEZA renovada (entran Pacífico $76, Negra Modelo $89, Modelo Especial $89, Corona $69, Victoria $69, Andariega de Camarón 960 ml $249; sale Indio, Tecate, XX Lager, XX Ambar, Heineken, Bohemia Clara/Obscura, Camarochela 1 LT; Ultra $75→$89). Bebidas, Coctelería y Cebadas quedaron idénticas.
 - Corrección de tarjetas CAFÉ y CREPAS FLAMBEADAS: los archivos descargados del menú estaban intercambiados (menu-cafe-postres.jpeg contiene la página de comida y menu-comida.jpeg la de café/postres); se re-cortaron las fotos reales desde la página correcta eliminando fragmentos de texto.
+- Hook `useScreenWakeLock` (`/app/frontend/src/hooks/useScreenWakeLock.js`) usado en `App.js`: mantiene la pantalla activa con la Screen Wake Lock API mientras el menú está visible; se libera al ocultar la pestaña/salir y se re-solicita al volver; tolerante a navegadores sin soporte o con permiso denegado.
+- Nueva categoría SERVICIOS (grupo bebidas, después de CERVEZA): MICHELADO $25, CUBANO $25 y CLAMATO PARA CERVEZA $35; aparece automáticamente en la barra de navegación.
 - Portada con logo oficial, revelado animado "BUFFET MAR Y TIERRA" y botón "Ver menú".
 - Barra de categorías sticky, deslizable, con estado activo por IntersectionObserver y scroll suave con lenis.
 - Las 18 categorías completas con productos, precios y tiempos de preparación verificados contra las imágenes originales.
