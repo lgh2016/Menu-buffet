@@ -240,9 +240,9 @@ export const CATEGORIES = [
     short: "Servicios",
     group: "bebidas",
     products: [
-      { name: "MICHELADO", price: null },
-      { name: "CUBANO", price: null },
-      { name: "CLAMATO PARA CERVEZA", price: null },
+      { name: "MICHELADO", price: "$25" },
+      { name: "CUBANO", price: "$25" },
+      { name: "CLAMATO PARA CERVEZA", price: "$35" },
     ],
   },
   {
