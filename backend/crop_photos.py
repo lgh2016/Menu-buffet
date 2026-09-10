@@ -12,8 +12,8 @@ def crop_frac(src, box_frac, out, size=640):
     im.save(os.path.join(IMG, out), "JPEG", quality=82, optimize=True)
     print(out, im.size)
 
-crop_frac("menu-cafe-postres.jpeg", (0.10, 0.16, 0.48, 0.40), "foto-cafe.jpg")
-crop_frac("menu-cafe-postres.jpeg", (0.04, 0.54, 0.48, 0.78), "foto-postre.jpg")
+crop_frac("menu-comida.jpeg", (0.10, 0.16, 0.455, 0.38), "foto-cafe.jpg")
+crop_frac("menu-comida.jpeg", (0.07, 0.555, 0.48, 0.78), "foto-postre.jpg")
 crop_frac("menu-bebidas.jpeg", (0.18, 0.70, 0.42, 0.90), "foto-michelada.jpg")
 crop_frac("menu-bebidas.jpeg", (0.68, 0.78, 0.88, 0.96), "foto-cerveza.jpg")
 
