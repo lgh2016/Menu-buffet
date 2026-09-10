@@ -23,6 +23,7 @@ Convertir el menú físico del restaurante Los Andariegos (Buffet Mar y Tierra) 
 - Sin carrito, sin pedidos, sin login, sin backend.
 
 ## Implementado (2026-09-10)
+- Actualización del apartado de bebidas según nueva imagen oficial: CERVEZA renovada (entran Pacífico $76, Negra Modelo $89, Modelo Especial $89, Corona $69, Victoria $69, Andariega de Camarón 960 ml $249; sale Indio, Tecate, XX Lager, XX Ambar, Heineken, Bohemia Clara/Obscura, Camarochela 1 LT; Ultra $75→$89). Bebidas, Coctelería y Cebadas quedaron idénticas.
 - Portada con logo oficial, revelado animado "BUFFET MAR Y TIERRA" y botón "Ver menú".
 - Barra de categorías sticky, deslizable, con estado activo por IntersectionObserver y scroll suave con lenis.
 - Las 18 categorías completas con productos, precios y tiempos de preparación verificados contra las imágenes originales.
