@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import { CATEGORIES } from "@/data/menuData";
+import useScreenWakeLock from "@/hooks/useScreenWakeLock";
 import Hero from "@/components/Hero";
 import CategoryNav from "@/components/CategoryNav";
 import MenuSection from "@/components/MenuSection";
@@ -41,6 +42,8 @@ const MARQUEE_ITEMS = [
 function App() {
   const lenisRef = useRef(null);
   const [activeId, setActiveId] = useState(CATEGORIES[0].id);
+  // Evita que el teléfono/tablet apague la pantalla mientras el menú está abierto.
+  useScreenWakeLock();
 
   useEffect(() => {
     const lenis = new Lenis({ autoRaf: true, lerp: 0.11 });
