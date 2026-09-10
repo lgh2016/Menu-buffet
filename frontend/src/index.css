@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --azul: #1a58b0;
+    --azul-oscuro: #123e85;
+    --naranja: #c1440e;
+    --papel: #fffdf9;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--papel);
+    color: #1f2937;
+    font-family: "Oswald", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+    font-family: "Alfa Slab One", serif;
+}
+
+.font-menu {
+    font-family: "Oswald", sans-serif;
+}
+
+.text-azul { color: var(--azul); }
+.text-azul-oscuro { color: var(--azul-oscuro); }
+.text-naranja { color: var(--naranja); }
+.bg-azul { background-color: var(--azul); }
+
+::selection {
+    background: rgba(26, 88, 176, 0.18);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes marquee-drift {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+.marquee-track {
+    animation: marquee-drift 55s linear infinite;
+}
+
+@keyframes float-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+.float-soft {
+    animation: float-soft 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track, .float-soft { animation: none; }
+    html { scroll-behavior: auto; }
+}
