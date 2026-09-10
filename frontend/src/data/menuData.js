@@ -235,6 +235,17 @@ export const CATEGORIES = [
     ],
   },
   {
+    id: "servicios",
+    name: "SERVICIOS",
+    short: "Servicios",
+    group: "bebidas",
+    products: [
+      { name: "MICHELADO", price: null },
+      { name: "CUBANO", price: null },
+      { name: "CLAMATO PARA CERVEZA", price: null },
+    ],
+  },
+  {
     id: "cafe",
     name: "CAFE",
     short: "Café",
