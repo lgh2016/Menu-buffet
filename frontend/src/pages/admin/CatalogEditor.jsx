@@ -165,6 +165,18 @@ const CatalogEditor = ({ doc, onSave, title, subtitle, showName = false, showThe
                 onChange={(e) => setData((d) => ({ ...d, theme: { ...d.theme, subtitle: e.target.value } }))}
               />
             </div>
+            <div>
+              <label className="mb-1 block text-xs font-semibold text-gray-500">Plantilla visual</label>
+              <select
+                data-testid="tema-plantilla"
+                className={inputCls}
+                value={theme.template || "classic"}
+                onChange={(e) => setData((d) => ({ ...d, theme: { ...d.theme, template: e.target.value } }))}
+              >
+                <option value="classic">Clásica (Los Andariegos)</option>
+                <option value="mexican-independence">Edición 15 de Septiembre</option>
+              </select>
+            </div>
             {[
               ["primaryColor", "Color principal (títulos y precios)", "tema-color-principal"],
               ["secondaryColor", "Color secundario (nombres de platillos)", "tema-color-secundario"],

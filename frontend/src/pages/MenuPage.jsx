@@ -7,6 +7,7 @@ import CategoryNav from "@/components/CategoryNav";
 import MenuSection from "@/components/MenuSection";
 import PhotoBreak from "@/components/PhotoBreak";
 import { CitrusSlice } from "@/components/Decor";
+import SeptemberMenu from "@/components/september/SeptemberMenu";
 
 const GROUPS = [
   { id: "cocina", label: "DE LA COCINA" },
@@ -137,6 +138,19 @@ const MenuPage = () => {
   }
 
   const theme = data.buffet.theme || {};
+
+  // Plantilla visual asociada al buffet activo: solo los buffets configurados con
+  // template "mexican-independence" usan la experiencia especial de septiembre.
+  if ((theme.template || "classic") === "mexican-independence") {
+    return (
+      <SeptemberMenu
+        buffet={data.buffet}
+        categories={categories}
+        activeId={activeId}
+        onSelect={scrollTo}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen">

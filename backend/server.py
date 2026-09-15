@@ -49,6 +49,7 @@ class Category(BaseModel):
 
 
 class Theme(BaseModel):
+    template: str = "classic"  # "classic" | "mexican-independence" — define la plantilla visual del menú público
     title: str = "BUFFET"
     subtitle: str = "MAR Y TIERRA"
     primaryColor: str = "#1a58b0"

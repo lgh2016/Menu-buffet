@@ -33,8 +33,9 @@ DEFAULT_THEME = {
 }
 
 SEPT15_THEME = {
-    "title": "BUFFET 15 DE SEPTIEMBRE",
-    "subtitle": "MAR Y TIERRA · EDICIÓN ESPECIAL",
+    "template": "mexican-independence",
+    "title": "EDICIÓN ESPECIAL 15 DE SEPTIEMBRE",
+    "subtitle": "Tradición, sabor y celebración al estilo Los Andariegos",
     "primaryColor": "#146b3a",
     "secondaryColor": "#b02a37",
     "backgroundColor": "#faf5ea",
