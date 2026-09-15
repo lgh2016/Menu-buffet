@@ -22,6 +22,15 @@ Convertir el menú físico del restaurante Los Andariegos (Buffet Mar y Tierra) 
 - Animaciones sutiles: fade-in al hacer scroll, microinteracciones en navegación, scroll suave (lenis).
 - Sin carrito, sin pedidos, sin login, sin backend.
 
+## Implementado (2026-09-15)
+- Sistema de buffets por temporada con backend (FastAPI + MongoDB): colección `buffets` (categorías, productos, tema visual, fechas de creación/modificación, campos futuros validFrom/validTo/branch) y colección `drinks` (catálogo global único, compartido por todos los buffets).
+- Endpoints: GET /api/menu/public (buffet activo + bebidas, filtra ocultos), CRUD de buffets, duplicar (copia independiente), activar/desactivar (solo uno activo), GET/PUT /api/drinks, POST /api/upload (imágenes a /api/uploads/).
+- Panel admin sin login: /admin/buffets (lista, crear vacío o duplicando, activar "Usar este buffet", desactivar, editar), /admin/buffets/:id (editor: nombre, personalización con colores/hero/fondo/banner/decorativa, categorías y platillos con agregar/eliminar/ocultar/ordenar/mover entre categorías), /admin/bebidas (editor del catálogo global reutilizando el mismo componente).
+- Menú público dinámico: consulta el buffet activo al cargar y aplica su tema vía variables CSS; las bebidas globales heredan el tema del buffet activo. Cambiar de buffet no requiere redeploy.
+- Buffets sembrados: "Buffet Tradicional" (activo, tema azul/naranja original, 13 categorías) y "Buffet 15 de Septiembre" (inactivo, tema verde/blanco/rojo, categorías Entrada/Segundo tiempo/Tercer tiempo/Guarniciones con los platillos solicitados).
+- Plantillas visuales por buffet: `theme.template` ("classic" | "mexican-independence"), seleccionable en Personalización del editor. La plantilla "mexican-independence" (componentes en `src/components/september/`, estilos `.sept-*` en index.css) renderiza una experiencia oscura premium de fiestas patrias: hero con jinetes al atardecer, papel picado, brasas flotantes, logo con anillo dorado, tarjetas artesanales oscuras con acentos oro/verde/rojo, recorrido por tiempos, transición "Brinda al estilo Los Andariegos" hacia las bebidas globales (mismo tema oscuro). Solo aplica al buffet que la tenga configurada; el resto usa la plantilla clásica intacta.
+- El archivo src/data/menuData.js quedó como referencia histórica; el menú ya se alimenta de MongoDB.
+
 ## Implementado (2026-09-10)
 - Actualización del apartado de bebidas según nueva imagen oficial: CERVEZA renovada (entran Pacífico $76, Negra Modelo $89, Modelo Especial $89, Corona $69, Victoria $69, Andariega de Camarón 960 ml $249; sale Indio, Tecate, XX Lager, XX Ambar, Heineken, Bohemia Clara/Obscura, Camarochela 1 LT; Ultra $75→$89). Bebidas, Coctelería y Cebadas quedaron idénticas.
 - Corrección de tarjetas CAFÉ y CREPAS FLAMBEADAS: los archivos descargados del menú estaban intercambiados (menu-cafe-postres.jpeg contiene la página de comida y menu-comida.jpeg la de café/postres); se re-cortaron las fotos reales desde la página correcta eliminando fragmentos de texto.
