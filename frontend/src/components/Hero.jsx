@@ -9,15 +9,32 @@ const lineReveal = {
   }),
 };
 
-const Hero = ({ onEnter }) => {
+const Hero = ({ onEnter, title = "BUFFET", subtitle = "MAR Y TIERRA", backgroundImage, decorativeImage }) => {
   return (
     <header
       data-testid="portada"
       className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6"
     >
+      {backgroundImage && (
+        <img
+          src={backgroundImage}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.12]"
+        />
+      )}
       <CitrusSlice className="text-azul pointer-events-none absolute -left-16 -top-16 h-52 w-52 opacity-[0.14]" />
       <CitrusSlice className="text-azul pointer-events-none absolute -bottom-20 -right-14 h-64 w-64 opacity-[0.12]" />
-      <ShrimpMark className="text-naranja pointer-events-none absolute right-6 top-10 h-14 w-14 opacity-25 md:right-16 md:top-16" />
+      {decorativeImage ? (
+        <img
+          src={decorativeImage}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute right-6 top-10 h-16 opacity-70 md:right-16 md:top-16"
+        />
+      ) : (
+        <ShrimpMark className="text-naranja pointer-events-none absolute right-6 top-10 h-14 w-14 opacity-25 md:right-16 md:top-16" />
+      )}
 
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}
@@ -51,7 +68,7 @@ const Hero = ({ onEnter }) => {
             data-testid="portada-titulo"
             className="font-display text-azul-oscuro text-4xl leading-tight sm:text-5xl lg:text-6xl"
           >
-            BUFFET
+            {title}
           </motion.h1>
         </div>
         <div className="overflow-hidden">
@@ -62,7 +79,7 @@ const Hero = ({ onEnter }) => {
             animate="visible"
             className="font-display text-naranja text-2xl tracking-wide sm:text-3xl lg:text-4xl"
           >
-            MAR Y TIERRA
+            {subtitle}
           </motion.p>
         </div>
       </div>
